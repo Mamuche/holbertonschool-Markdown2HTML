@@ -29,6 +29,18 @@ def markdown_to_html(markdown_file, html_file):
         elif line.startswith('### '):
             # add an h3 tag
             html_lines.append(f'<h3>{line[4:]}</h3>')
+        # level 4 header
+        elif line.startswith('#### '):
+            # add an h4 tag
+            html_lines.append(f'<h4>{line[5:]}</h4>')
+        # level 5 header
+        elif line.startswith('##### '):
+            # add an h5 tag
+            html_lines.append(f'<h5>{line[6:]}</h5>')
+        # level 6 header
+        elif line.startswith('###### '):
+            # add an h6 tag
+            html_lines.append(f'<h6>{line[7:]}</h6>')
         # if it's a list
         elif line.startswith('- '):
             # check if one is already open
